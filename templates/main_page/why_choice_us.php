@@ -10,68 +10,42 @@
 
                 <!-- Section Title Icon -->
                 <div class="section-title__icon ms-4">
-                    <span class="icon-award-bulk text-secondary">
-                        <span class="path1"></span>
-                        <span class="path2"></span>
-                        <span class="path3"></span>
-                    </span>
+                    <?php echo get_field('why_choce_us_icon'); ?>
                 </div>
 
                 <!-- Section Title Text -->
                 <div class="section-title__text">
-                    <p class="font-pinar fw-500 fs-2 mb-2 text-gray-200">چرا دایرکت؟</p>
-                    <h2 class="display-4 fw-800 text-gray-100">با دایرکت تنها سه گام با فروش حداکثری فاصله دارید!</h2>
+                    <p class="font-pinar fw-500 fs-2 mb-2 text-gray-200"><?php echo get_field('why_choce_us_subtitle'); ?></p>
+                    <h2 class="display-4 fw-800 text-gray-100"><?php echo get_field('why_choce_us_title'); ?></h2>
                 </div>
             </div>
         </div>
 
         <!-- Cards -->
         <div class="row">
-            <!-- Card -->
-            <div class="col-12 col-xl-4 mb-8 mb-xl-0">
-                <div class="direct-card rounded-6 px-7 pb-7 pt-10">
-                    <div class="d-flex mb-10">
-                        <span class="font-pinar display-1 text-gray-700 fw-800 ms-6">۱</span>
-                        <div>
-                            <h3 class="fs-2 fw-800 text-gray-100 mb-4">ثبت شماره موبایل مشتری</h3>
-                            <p class="fs-4 mb-2 text-gray-200">در گام اول باید شماره موبایل مشتری‌تان را در دستگاه دایرکت وارد کنید.</p>
+
+            <?php if( have_rows('why_choce_us_content') ): ?>
+                <?php while( have_rows('why_choce_us_content') ): the_row(); ?>
+                    <!-- Card -->
+                    <div class="col-12 col-xl-4 mb-8 mb-xl-0">
+                        <div class="direct-card rounded-6 px-7 pb-7 pt-10">
+                            <div class="d-flex mb-10">
+                                <span class="font-pinar display-1 text-gray-700 fw-800 ms-6"><?php echo get_sub_field('number'); ?></span>
+                                <div>
+                                    <h3 class="fs-2 fw-800 text-gray-100 mb-4"><?php echo get_sub_field('title'); ?></h3>
+                                    <p class="fs-4 mb-2 text-gray-200"><?php echo get_sub_field('subtitle'); ?></p>
+                                </div>
+                            </div>
+                            <div>
+                                <?php $why_choice_us_image = get_sub_field('image'); ?>
+                                <?php if( !empty( $why_choice_us_image ) ): ?>
+                                    <img class="w-100" src="<?php echo esc_url($why_choice_us_image['url']); ?>" alt="<?php echo esc_attr($why_choice_us_image['alt']); ?>" >
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <img class="w-100" src="images/main/why_choose_us_02.webp" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- Card -->
-            <div class="col-12 col-xl-4 mb-8 mb-xl-0">
-                <div class="direct-card rounded-6 px-7 pb-7 pt-10">
-                    <div class="d-flex mb-10">
-                        <span class="font-pinar display-1 text-gray-700 fw-800 ms-6">۲</span>
-                        <div>
-                            <h3 class="fs-2 fw-800 text-gray-100 mb-4">معرفی کسب‌وکار</h3>
-                            <p class="fs-4 mb-2 text-gray-200">با ارسال کارت ویزیت دیجیتال کسب‌وکار و راه‌های ارتباطی‌تان به مشتری معرفی کنید.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <img class="w-100" src="images/main/why_choose_us_03.webp" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- Card -->
-            <div class="col-12 col-xl-4 mb-8 mb-xl-0">
-                <div class="direct-card rounded-6 px-7 pb-7 pt-10">
-                    <div class="d-flex mb-10">
-                        <span class="font-pinar display-1 text-gray-700 fw-800 ms-6">۳</span>
-                        <div>
-                            <h3 class="fs-2 fw-800 text-gray-100 mb-4">را‌ه‌اندازی باشگاه مشتریان</h3>
-                            <p class="fs-4 mb-2 text-gray-200">۲۱ قابلیت متنوع و جذاب منتظر شماست با راه‌اندازی باشگاه مشتریان کسب‌وکارتان را متحول کنید.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <img class="w-100" src="images/main/why_choose_us_01.webp" alt="">
-                    </div>
-                </div>
-            </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
     <div class="light bg-secondary position-absolute top-100 start-100 translate-middle"></div>
