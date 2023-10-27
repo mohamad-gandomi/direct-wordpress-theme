@@ -1,0 +1,20 @@
+/* MENU LINKS */
+.nav-link {
+    color: #F0F1F3;
+}
+
+.nav-link span {
+    margin: 0 !important;
+}
+
+.navbar-brand img {
+    max-width: 83px;
+}
+
+.dropdown-item {
+    font-size: 14px;
+}
+
+html[data-bs-theme="light"] .nav-link {
+    color: #14161B;
+}
