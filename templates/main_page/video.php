@@ -9,16 +9,7 @@
 
                 <!-- Icon -->
                 <div class="main-video__icon mb-7">
-                    <span class="icon-direct-bulk text-primary">
-                        <span class="path1"></span>
-                        <span class="path2"></span>
-                        <span class="path3"></span>
-                        <span class="path4"></span>
-                        <span class="path5"></span>
-                        <span class="path6"></span>
-                        <span class="path7"></span>
-                        <span class="path8"></span>
-                    </span>
+                    <?php echo get_field('video_icon'); ?>
                 </div>
 
                 <!-- Divider -->
@@ -26,15 +17,18 @@
 
                 <!-- Text -->
                 <div class="main-video__text">
-                    <h2 class="display-4 fw-800 text-gray-100 mb-6">دایرکت یا <span class="text-secondary">دایرکت پرو</span>؟ <br> کدام یک مناسب کسب‌وکار شماست؟</h2>
-                    <p class="fs-4 mb-0 text-gray-300 fw-500">دایرکت یک دستگاه ذخیره شماره موبایل به همراه 21 امکان جذاب و متنوع است که می‌توانید به کمک آن باشگاه مشتریان‌تان را بیاندازید و با بهترین تکنیک‌‎های فروش آن‌ها را به خرید بیشتر تشویق کنید. و با بهترین تکنیک‌‎های فروش آن‌ها را به خرید بیشتر تشویق کنید.</p>
+                    <h2 class="display-4 fw-800 text-gray-100 mb-6"><?php echo get_field('video_title'); ?></h2>
+                    <p class="fs-4 mb-0 text-gray-300 fw-500"><?php echo get_field('video_text'); ?></p>
                 </div>
 
             </div>
 
             <!-- Video -->
             <div class="col-12 col-xl-6">
-                <img class="w-100" role="button" src="images/main/main-video-poster.webp" alt="vdieo poster">
+                <?php $video_image = get_field('video_image'); ?>
+                <?php if( !empty( $video_image ) ): ?>
+                    <img class="w-100" role="button" src="<?php echo esc_url($video_image['url']); ?>" alt="<?php echo esc_attr($video_image['alt']); ?>" >
+                <?php endif; ?>
             </div>
         </div>
     </div>
