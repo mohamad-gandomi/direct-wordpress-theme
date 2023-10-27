@@ -6,20 +6,31 @@
             <div class="col-12 col-xl-6 text-center text-xl-end">
                 <div class="main-welcome__title mx-auto mx-xl-0">
                     <div class="mb-9">
-                        <h1 class="fw-800 mb-7">قهرمان <span class="text-secondary">کسب و کارت</span> باش</h1>
-                        <p class="text-gray-200">فرقی ندارد هدف‌تان افزایش فروش باشد یا جذب مشتری، <strong>دایرکت</strong> ابزاری قدرتمند برای کسب‌وکارشماست که می‌خواهید لذت <strong>فروش حداکثری</strong> را تجربه کنید و از هر مشتری یک مشتری وفادار بسازید.</p>
+                        <h1 class="fw-800 mb-7"><?php echo get_field( "hero_title" ); ?></h1>
+                        <p class="text-gray-200"><?php echo get_field( "hero_text" ); ?></p>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-xl-6 mb-5 mb-xl-0"><img src="images/main/people-avatars.png" alt="picture of people avatars"></div>
+                        <div class="col-12 col-xl-6 mb-5 mb-xl-0">
+                            <?php $hero_avatar_images = get_field('hero_avatar_images'); ?>
+                            <?php if( !empty( $hero_avatar_images ) ): ?>
+                                <img src="<?php echo esc_url($hero_avatar_images['url']); ?>" alt="<?php echo esc_attr($hero_avatar_images['alt']); ?>" />
+                            <?php endif; ?>
+                        </div>
                         <div class="col-12 col-xl-6 align-self-center position-relative">
                             <a href="#" class="text-secondary text-decoration-none">درخواست مشاوره</a>
-                            <img id="curveArrow" class="position-absolute d-none d-xl-block" src="images/main/arrow.svg" alt="a curve arrow">
+                            <?php $hero_arrow_light = get_field('hero_arrow_light'); ?>
+                            <?php if( !empty( $hero_arrow_light ) ): ?>
+                                <img id="curveArrow" class="position-absolute d-none d-xl-block" src="<?php echo esc_url($hero_arrow_light['url']); ?>" alt="<?php echo esc_attr($hero_arrow_light['alt']); ?>" />
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-xl-6 d-none d-xl-block">
-                <img class="w-100 mt-5" src="images/main/main_welcome.webp" alt="main welcome image">
+                <?php $hero_image = get_field('hero_image'); ?>
+                <?php if( !empty( $hero_image ) ): ?>
+                    <img class="w-100 mt-5" src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>" />
+                <?php endif; ?>
             </div>
         </div>
     </div>
