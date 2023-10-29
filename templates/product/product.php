@@ -13,8 +13,8 @@
                             <img class="w-100" src="<?php echo esc_url($product_image['url']); ?>" alt="<?php echo esc_attr($product_image['alt']); ?>" >
                         <?php endif; ?>
 
-                        <div class="product__gallery__image__blur bg-primary"></div>
-                        <span class="icon-box-2-bulk text-primary display-1 position-absolute bottom-0 end-0">
+                        <div class="product__gallery__image__blur bg-<?php echo get_field('product_color'); ?>"></div>
+                        <span class="icon-box-2-bulk text-<?php echo get_field('product_color'); ?> display-1 position-absolute bottom-0 end-0">
                             <span class="path1"></span>
                             <span class="path2"></span>
                             <span class="path3"></span>
