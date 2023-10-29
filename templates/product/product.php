@@ -8,7 +8,11 @@
                 <div class="product__gallery my-10">
                     <!-- Product Image -->
                     <div class="product__gallery__image d-inline-block">
-                        <img class="w-100" src="images/products/direct_pro.webp" alt="direct pro product image">
+                        <?php $product_image = get_field('product_image'); ?>
+                        <?php if( !empty( $product_image ) ): ?>
+                            <img class="w-100" src="<?php echo esc_url($product_image['url']); ?>" alt="<?php echo esc_attr($product_image['alt']); ?>" >
+                        <?php endif; ?>
+
                         <div class="product__gallery__image__blur bg-primary"></div>
                         <span class="icon-box-2-bulk text-primary display-1 position-absolute bottom-0 end-0">
                             <span class="path1"></span>
@@ -28,7 +32,7 @@
                 <!-- Product Title -->
                 <div class="product__info__title mb-7">
                     <div class="d-flex align-items-center mb-5">
-                        <span class="icon-direct-bulk text-primary display-1 ms-5">
+                        <span class="<?php echo get_field('product_icon'); ?> <?php echo get_field('product_icon_color'); ?> display-1 ms-5">
                             <span class="path1"></span>
                             <span class="path2"></span>
                             <span class="path3"></span>
@@ -37,27 +41,30 @@
                             <span class="path6"></span>
                             <span class="path7"></span>
                             <span class="path8"></span>
+                            <span class="path9"></span>
                         </span>
-                        <h1 class="display-5 text-gray-50 mb-0 fw-800">دایرکت پرو</h1>
+                        <h1 class="display-5 text-gray-50 mb-0 fw-800"><?php echo get_field('product_title'); ?></h1>
                     </div>
-                    <span class="font-pinar fw-500 text-gray-200">دایرکت پرو آچار فرانسه کسب‌وکار شماست</span>
+                    <span class="font-pinar fw-500 text-gray-200"><?php echo get_field('product_subtitle'); ?></span>
                 </div>
 
                 <!-- Product Description -->
                 <div class="product__info__description text-gray-50 fw-light lh-lg mb-7">
-                    <p>دایرکت پرو علاوه بر مجهز بودن به بروزترین دستگاه پوز، به شما کمک می‌کند در عرض چند ثانیه یک باشگاه مشتریان حرفه‌ای راه‌اندازی کنید تا هر مشتری با اولین خریدش به صورت خودکار عضوی از باشگاه مشتریان شما شود. با خرید دستگاه دایرکت پرو دیگر فروش حداکثری یک رویا نیست، ما فروش را برای‌تان آسان کردیم!</p>
+                    <p><?php echo get_field('product_description'); ?></p>
                 </div>
 
                 <!-- Product Variables -->
                 <div class="product__info__variables d-flex align-items-center mb-7">
-                    <button class="btn btn-gray-700 text-white-500 rounded-3 p-3 d-flex ms-3">
-                        <span class="product__info__variables__colorIndicator bg-black-500"></span>
-                        <span>مشکی</span>
-                    </button>
-                    <button class="btn btn-gray-700 text-white-500 rounded-3 p-3 d-flex ms-3">
-                        <span class="product__info__variables__colorIndicator bg-white-500"></span>
-                        <span>سفید</span>
-                    </button>
+                    <?php if( have_rows('product_variables') ): ?>
+                        <?php while( have_rows('product_variables') ): the_row(); ?>
+
+                            <button class="btn btn-gray-700 text-white-500 rounded-3 p-3 d-flex ms-3">
+                                <span class="product__info__variables__colorIndicator <?php echo get_sub_field('color'); ?>"></span>
+                                <span><?php echo get_sub_field('title'); ?></span>
+                            </button>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
 
                 <!-- Product Form -->
@@ -65,7 +72,7 @@
 
                     <!-- Product Price -->
                     <div class="product__info__form__price mb-7">
-                        <span class="font-pinar text-success-500 display-4 fw-800">۷٫۶۰۰٫۰۰۰ تومان</span>
+                        <span class="font-pinar text-success-500 display-4 fw-800"><?php echo get_field('product_price'); ?></span>
                     </div>
 
                     <!-- Product Count -->
@@ -83,23 +90,27 @@
 
                 <!-- Product Bonus -->
                 <div class="product__info__bonus d-flex flex-wrap">
-                    <div class="d-flex align-items-center mb-3 ms-6">
-                        <span class="icon-shield-tick-bulk text-success-500 display-4 ms-2">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                        </span>
-                        <span class="text-gray-50 fw-light fs-4">ضمانت 1 ساله</span>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <span class="icon-truck-bulk text-secondary display-4 ms-2">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                            <span class="path3"></span>
-                            <span class="path4"></span>
-                            <span class="path5"></span>
-                        </span>
-                        <span class="text-gray-50 fw-light fs-4">ارسال رایگان سفارشات بیش از 900 هزار تومان</span>
-                    </div>
+
+                    <?php if( have_rows('product_bonus') ): ?>
+                        <?php while( have_rows('product_bonus') ): the_row(); ?>
+
+                            <div class="d-flex align-items-center mb-3 ms-6">
+                                <span class="<?php echo get_sub_field('icon'); ?> <?php echo get_sub_field('icon_color'); ?> display-4 ms-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                    <span class="path5"></span>
+                                    <span class="path6"></span>
+                                    <span class="path7"></span>
+                                    <span class="path8"></span>
+                                    <span class="path9"></span>
+                                </span>
+                                <span class="text-gray-50 fw-light fs-4"><?php echo get_sub_field('text'); ?></span>
+                            </div>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
