@@ -32,3 +32,8 @@ html[data-bs-theme="light"] .nav-link {
 .wpcf7-response-output {
     color: white;
 }
+
+/* LIGHT */
+.light {
+    display: flex;
+}
