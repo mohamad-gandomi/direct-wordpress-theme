@@ -5,6 +5,11 @@
 
 .nav-link span {
     margin: 0 !important;
+    color: white;
+}
+
+.dropdown-item span {
+    color: black;
 }
 
 .navbar-brand img {
@@ -36,4 +41,8 @@ html[data-bs-theme="light"] .nav-link {
 /* LIGHT */
 .light {
     display: flex;
+}
+
+.main-welcome {
+    overflow-x: hidden;
 }

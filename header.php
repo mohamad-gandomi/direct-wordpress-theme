@@ -19,7 +19,7 @@
         <div class="container">
 
             <!-- Brand -->
-            <a class="navbar-brand mx-0" href="#">
+            <a class="navbar-brand mx-0" href="<?php echo site_url(); ?>">
                 <?php
                     if ( has_custom_logo() ) {
                         $custom_logo_id = get_theme_mod( 'custom_logo' );
