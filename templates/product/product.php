@@ -78,9 +78,9 @@
                     <!-- Product Count -->
                     <div class="product__info__form__count mb-7">
                         <div class="quantity-input bg-gray-800 rounded-6 d-inline-block px-3">
-                            <button class="font-poppins quantity-button minus bg-gray-500 rounded-circle text-light quantity-button minus">-</button>
+                            <button class="font-poppins quantity-button bg-gray-500 rounded-circle text-light quantity-button minus">-</button>
                             <input class="display-5 text-light text-center" type="text" id="quantity" name="quantity" value="1">
-                            <button class="font-poppins quantity-button minus bg-gray-500 rounded-circle text-light quantity-button plus">+</button>
+                            <button class="font-poppins quantity-button bg-gray-500 rounded-circle text-light quantity-button plus">+</button>
                         </div>
                     </div>
 
