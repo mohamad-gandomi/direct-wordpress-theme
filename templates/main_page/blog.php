@@ -26,7 +26,7 @@
             // Define the custom query to retrieve posts
             $args = array(
                 'post_type' => 'post',  // You can specify the post type here (e.g., 'post', 'page', 'custom_post_type')
-                'posts_per_page' => -1, // To retrieve all posts, use -1, or specify the number of posts you want to display.
+                'posts_per_page' => 3, // To retrieve all posts, use -1, or specify the number of posts you want to display.
             );
 
             $custom_query = new WP_Query($args);
@@ -37,6 +37,8 @@
 
                     $post_title = get_the_title();
                     $post_excerpt = get_the_excerpt();
+                    $excerpt = substr($post_excerpt, 0, 200);
+                    $excerpt_result = substr($excerpt, 0, strrpos($excerpt, ' '));
                     $post_author = get_the_author();
                     $post_date = get_the_date();
                     $post_categories = get_the_category();
@@ -44,6 +46,7 @@
                     $post_comments_count = get_comments_number();
                     $post_author_id = get_the_author_meta('ID');
                     $post_author_avatar_url = get_avatar_url($post_author_id, array('size' => 32));
+                    $psot_permalink = get_post_permalink();
 
                     ?>
                         <!-- Blog Post -->
@@ -83,8 +86,8 @@
                                     </div>
                                 </div>
                                 <div class="blog__card__text p-6">
-                                    <h3 class="font-yekanbakh text-gray-50 display-5 fw-600 mb-2"><?php echo $post_title; ?></h3>
-                                    <p class="text-gray-200 fs-4 mb-6"><?php echo $post_excerpt; ?></p>
+                                    <h3 class="font-yekanbakh text-gray-50 display-5 fw-600 mb-2"><a class="text-decoration-none text-gray-50" href="<?php echo $psot_permalink; ?>"><?php echo $post_title; ?></a></h3>
+                                    <p class="text-gray-200 fs-4 mb-6"><?php echo $excerpt_result; ?></p>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
                                             <img class="ms-3 rounded-circle" src="<?php echo $post_author_avatar_url; ?>" alt="<?php echo $post_author; ?> profile image">
