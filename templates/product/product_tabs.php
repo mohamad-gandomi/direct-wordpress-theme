@@ -197,10 +197,17 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-xl-6">
-                                        <?php $tab4_tab_image = get_field('tab4_tab_image'); ?>
-                                        <?php if( !empty( $tab4_tab_image ) ): ?>
-                                            <img class="w-100 product-information__img me-xl-auto d-block" src="<?php echo esc_url($tab4_tab_image['url']); ?>" alt="<?php echo esc_attr($tab4_tab_image['alt']); ?>" >
-                                        <?php endif; ?>                                
+                                        <?php $video_file = get_field('tab4_tab_video_file'); ?>
+                                        <?php $video_poster = get_field('tab4_tab_video_poster'); ?>
+
+                                        <?php if (!empty($video_file)): ?>
+                                            <div class="video-container rounded-5 bg-gray-800">
+                                                <video class="w-100 rounded-5" controls poster="<?php echo esc_url($video_poster['url']); ?>">
+                                                    <source src="<?php echo esc_url($video_file['url']); ?>" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        <?php endif; ?>                              
                                     </div>
                                 </div>
                             </div>

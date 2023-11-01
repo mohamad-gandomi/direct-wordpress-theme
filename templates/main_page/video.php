@@ -25,9 +25,16 @@
 
             <!-- Video -->
             <div class="col-12 col-xl-6">
-                <?php $video_image = get_field('video_image'); ?>
-                <?php if( !empty( $video_image ) ): ?>
-                    <img class="w-100" role="button" src="<?php echo esc_url($video_image['url']); ?>" alt="<?php echo esc_attr($video_image['alt']); ?>" >
+                <?php $video_file = get_field('video_file'); ?>
+                <?php $video_poster = get_field('video_poster'); ?>
+
+                <?php if (!empty($video_file)): ?>
+                    <div class="video-container rounded-5 bg-gray-800">
+                        <video class="w-100 rounded-5" controls poster="<?php echo esc_url($video_poster['url']); ?>">
+                            <source src="<?php echo esc_url($video_file['url']); ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

@@ -77,9 +77,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-xl-6">
-                                                    <?php $image = get_sub_field('image'); ?>
-                                                    <?php if( !empty( $image ) ): ?>
-                                                        <img class="w-100 product-information__img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" >
+                                                    <?php $video_file = get_sub_field('video_file'); ?>
+                                                    <?php $video_poster = get_sub_field('video_poster'); ?>
+
+                                                    <?php if (!empty($video_file)): ?>
+                                                        <div class="video-container rounded-5 bg-gray-800">
+                                                            <video class="w-100 rounded-5" controls poster="<?php echo esc_url($video_poster['url']); ?>">
+                                                                <source src="<?php echo esc_url($video_file['url']); ?>" type="video/mp4">
+                                                                Your browser does not support the video tag.
+                                                            </video>
+                                                        </div>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -97,9 +104,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-xl-6">
-                                                    <?php $image = get_sub_field('image'); ?>
-                                                    <?php if( !empty( $image ) ): ?>
-                                                        <img class="w-100 product-information__img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" >
+                                                    <?php $video_file = get_sub_field('video_file'); ?>
+                                                    <?php $video_poster = get_sub_field('video_poster'); ?>
+
+                                                    <?php if (!empty($video_file)): ?>
+                                                        <div class="video-container rounded-5 bg-gray-800">
+                                                            <video class="w-100 rounded-5" controls poster="<?php echo esc_url($video_poster['url']); ?>">
+                                                                <source src="<?php echo esc_url($video_file['url']); ?>" type="video/mp4">
+                                                                Your browser does not support the video tag.
+                                                            </video>
+                                                        </div>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
