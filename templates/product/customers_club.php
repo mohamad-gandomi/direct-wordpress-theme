@@ -35,29 +35,28 @@
 
                 <div class="accordion direct-tabs" id="accordionExampletop">
 
-                    <div class="direct-tabs__btns p-1 bg-gray-800 rounded-3 d-inline-block mb-12 d-inline-flex flex-wrap">
-                        <?php if( have_rows('customers_club_content') ): ?>
-                            <?php $firstLoop = true; ?>
-                            <?php $id = 1; ?>
-                            <?php while( have_rows('customers_club_content') ): the_row(); ?>
-
-                                <?php if ($firstLoop): ?>
-                                    <?php $firstLoop = false; ?>
-                                    <button class="fs-2  btn btn-gray-900 text-white-500 px-5 py-3 rounded-3 d-flex align-items-center ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetop<?php echo $id; ?>" aria-expanded="true" aria-controls="collapsetop<?php echo $id; ?>">
-                                        <span class="icon-category-line display-6 ms-5"></span>
-                                        <?php echo get_sub_field('tab_title'); ?>
-                                    </button>
-                                <?php else: ?>
-                                    <button class="fs-2  btn btn-gray-900 text-white-500 px-5 py-3 rounded-3 d-flex align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetop<?php echo $id; ?>" aria-expanded="false" aria-controls="collapsetop<?php echo $id; ?>">
-                                        <span class="icon-category-line display-6 ms-5"></span>
-                                        <?php echo get_sub_field('tab_title'); ?>
-                                    </button>
-                                <?php endif; ?>
-
-                                <?php $id++ ?>
-
-                            <?php endwhile; ?>
-                        <?php endif; ?>
+                    <div class="d-flex mx-auto">
+                        <div class="direct-tabs__btns p-1 bg-gray-800 rounded-3 d-inline-block mb-12 mx-auto d-inline-flex flex-wrap">
+                            <?php if( have_rows('customers_club_content') ): ?>
+                                <?php $firstLoop = true; ?>
+                                <?php $id = 1; ?>
+                                <?php while( have_rows('customers_club_content') ): the_row(); ?>
+                                    <?php if ($firstLoop): ?>
+                                        <?php $firstLoop = false; ?>
+                                        <button class="fs-2  btn btn-gray-900 text-white-500 px-5 py-3 rounded-3 d-flex align-items-center ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetop<?php echo $id; ?>" aria-expanded="true" aria-controls="collapsetop<?php echo $id; ?>">
+                                            <span class="icon-category-line display-6 ms-5"></span>
+                                            <?php echo get_sub_field('tab_title'); ?>
+                                        </button>
+                                    <?php else: ?>
+                                        <button class="fs-2  btn btn-gray-900 text-white-500 px-5 py-3 rounded-3 d-flex align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetop<?php echo $id; ?>" aria-expanded="false" aria-controls="collapsetop<?php echo $id; ?>">
+                                            <span class="icon-category-line display-6 ms-5"></span>
+                                            <?php echo get_sub_field('tab_title'); ?>
+                                        </button>
+                                    <?php endif; ?>
+                                    <?php $id++ ?>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
 
                     <?php if( have_rows('customers_club_content') ): ?>

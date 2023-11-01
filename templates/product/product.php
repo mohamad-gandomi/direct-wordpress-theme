@@ -1,6 +1,6 @@
 <!-- PRODUCT
     ================================================== -->
-<section class="product mt-0 mb-14 mb-xl-16 mt-xl-14">
+<section class="product mt-0 mb-14 mb-xl-16 mt-xl-11">
     <div class="container">
         <div class="row">
             <!-- Product Gallery -->
