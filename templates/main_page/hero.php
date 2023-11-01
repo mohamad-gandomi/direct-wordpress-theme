@@ -17,11 +17,19 @@
                             <?php endif; ?>
                         </div>
                         <div class="col-12 col-xl-6 align-self-center position-relative">
+
                             <a href="#" class="text-secondary text-decoration-none">درخواست مشاوره</a>
+
                             <?php $hero_arrow_light = get_field('hero_arrow_light'); ?>
                             <?php if( !empty( $hero_arrow_light ) ): ?>
-                                <img id="curveArrow" class="position-absolute d-none d-xl-block" src="<?php echo esc_url($hero_arrow_light['url']); ?>" alt="<?php echo esc_attr($hero_arrow_light['alt']); ?>" />
+                                <img id="curveArrow" class="position-absolute d-none d-xl-block dark-show" src="<?php echo esc_url($hero_arrow_light['url']); ?>" alt="<?php echo esc_attr($hero_arrow_light['alt']); ?>" />
                             <?php endif; ?>
+
+                            <?php $hero_arrow_dark = get_field('hero_arrow_dark'); ?>
+                            <?php if( !empty( $hero_arrow_dark ) ): ?>
+                                <img id="curveArrow" class="position-absolute d-none d-xl-block light-show" src="<?php echo esc_url($hero_arrow_dark['url']); ?>" alt="<?php echo esc_attr($hero_arrow_dark['alt']); ?>" />
+                            <?php endif; ?>
+
                         </div>
                     </div>
                 </div>

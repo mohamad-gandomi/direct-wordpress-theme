@@ -105,13 +105,13 @@
                     <!-- Dark Logo -->
                     <?php $subfooter_dark_logo = get_field('subfooter_dark_logo', 'option'); ?>
                     <?php if( !empty( $subfooter_dark_logo ) ): ?>
-                        <img class="mb-9" src="<?php echo esc_url($subfooter_dark_logo['url']); ?>" alt="<?php echo esc_attr($subfooter_dark_logo['alt']); ?>" >
+                        <img class="mb-9 dark-show" src="<?php echo esc_url($subfooter_dark_logo['url']); ?>" alt="<?php echo esc_attr($subfooter_dark_logo['alt']); ?>" >
                     <?php endif; ?>
 
                     <!-- Light Logo -->
                     <?php $subfooter_light_logo = get_field('subfooter_light_logo', 'option'); ?>
                     <?php if( !empty( $subfooter_light_logo ) ): ?>
-                        <img class="mb-9" src="<?php echo esc_url($subfooter_light_logo['url']); ?>" alt="<?php echo esc_attr($subfooter_light_logo['alt']); ?>" >
+                        <img class="mb-9 light-show" src="<?php echo esc_url($subfooter_light_logo['url']); ?>" alt="<?php echo esc_attr($subfooter_light_logo['alt']); ?>" >
                     <?php endif; ?>
 
                     <p class="text-gray-100 mb-0"><?php echo get_field('subfooter_text', 'option'); ?></p>

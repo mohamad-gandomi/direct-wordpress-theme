@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> data-bs-theme="dark">
+<html <?php language_attributes(); ?> data-bs-theme="light">
 
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -20,16 +20,19 @@
 
             <!-- Brand -->
             <a class="navbar-brand mx-0" href="<?php echo site_url(); ?>">
-                <?php
-                    if ( has_custom_logo() ) {
-                        $custom_logo_id = get_theme_mod( 'custom_logo' );
-                        $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                        $logo_url = esc_url( $logo[0] );
-                        echo '<img src="' . $logo_url . '" alt="' . get_bloginfo( 'name' ) . '">';
-                    } else {
-                        echo '<span>' . get_bloginfo('name') . '</span>';
-                    }
-                ?>
+
+                <!-- Dark Logo -->
+                <?php $dark_logo = get_field('dark_logo', 'option'); ?>
+                <?php if( !empty( $dark_logo ) ): ?>
+                    <img class="dark-show" src="<?php echo esc_url($dark_logo['url']); ?>" alt="<?php echo esc_attr($dark_logo['alt']); ?>" >
+                <?php endif; ?>
+
+                <!-- Light Logo -->
+                <?php $light_logo = get_field('light_logo', 'option'); ?>
+                <?php if( !empty( $light_logo ) ): ?>
+                    <img class="light-show" src="<?php echo esc_url($light_logo['url']); ?>" alt="<?php echo esc_attr($light_logo['alt']); ?>" >
+                <?php endif; ?>
+
             </a>
 
             <!-- Toggler -->
@@ -55,7 +58,7 @@
             <!-- Login/Register & Dark/Light -->
             <div class="d-flex py-7 p-xl-0">
                 <!-- Dark/Light Mode -->
-                <a href="#" id="mode-toggle" class="icon-sun-bulk text-secondary fs-1 ms-6 text-decoration-none align-items-center">
+                <a href="#" id="mode-toggle" class="icon-moon-bulk text-primary fs-1 ms-6 text-decoration-none align-items-center">
                     <span class="path1"></span>
                     <span class="path2"></span>
                 </a>

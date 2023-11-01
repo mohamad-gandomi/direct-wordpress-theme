@@ -1,9 +1,9 @@
 /* MENU LINKS */
-.nav-link {
+html[data-bs-theme="dark"] .nav-link {
     color: #F0F1F3;
 }
 
-.nav-link span {
+html[data-bs-theme="dark"] .nav-link span {
     margin: 0 !important;
     color: white;
 }
@@ -45,4 +45,13 @@ html[data-bs-theme="light"] .nav-link {
 
 .main-welcome {
     overflow-x: hidden;
+}
+
+/* DARK & LIGHT HIDE/SHOW */
+html[data-bs-theme="dark"] .light-show {
+    display: none !important;
+}
+
+html[data-bs-theme="light"] .dark-show {
+    display: none !important;
 }
