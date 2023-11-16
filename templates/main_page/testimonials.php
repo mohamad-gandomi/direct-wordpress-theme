@@ -45,7 +45,6 @@
 
         <!-- CUSTOMER TESTIMONIALS
         ================================================== -->
-
         <!-- Carousel main container -->
         <div class="customer-testimonials-carousel swiper mb-10">
             <!-- Additional required wrapper -->

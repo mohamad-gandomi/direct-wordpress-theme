@@ -69,3 +69,13 @@ html[data-bs-theme="light"] .dark-show {
     width: 100%;
     height: 100%;
 }
+
+.video-carousel .video-container {
+    padding-bottom: 16%;
+}
+
+/* BLOG */
+
+.blog .blog__card {
+    overflow: hidden;
+}
