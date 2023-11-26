@@ -24,6 +24,12 @@ html[data-bs-theme="light"] .nav-link {
     color: #14161B;
 }
 
+html[data-bs-theme="light"] .navbar-toggler-icon {
+    background-image: url("data: image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' ><path stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' /></svg>");
+}
+
+
+
 /* CONTACT FORM */
 .main-contact-us__form br {
     display: none;
@@ -74,8 +80,74 @@ html[data-bs-theme="light"] .dark-show {
     padding-bottom: 16%;
 }
 
+.direct_video {
+    border-radius: 20px;
+}
+
 /* BLOG */
 
 .blog .blog__card {
     overflow: hidden;
+}
+
+/* HERO VIDEO */
+.hero_video {
+    object-fit: cover;
+}
+
+[data-bs-theme="light"] .hero_video {
+    filter: drop-shadow(-32px 32px 0px #E0E2E7);
+}
+
+[data-bs-theme="dark"] .hero_video {
+    filter: drop-shadow(-32px 32px 0px #292D35);
+}
+
+.customer-club {
+    border: none !important;
+}
+
+.h_iframe-aparat_embed_frame {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+/* Style tab content */
+.tabcontent {
+    display: none;
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Show the first tab content by default */
+#section1 {
+    display: block;
+}
+
+[data-bs-theme="dark"] .tablink {
+    background: none !important;
+    color: #667085 !important;
+    border: none !important
+}
+
+[data-bs-theme="dark"] .tablink.active {
+    background: #14161B !important;
+    color: #FAFAFA !important;
+}
+
+[data-bs-theme="light"] .tablink.active {
+    background: #F0F1F3 !important;
+    color: #3D4350 !important;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
