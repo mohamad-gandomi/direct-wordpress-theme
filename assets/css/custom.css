@@ -35,6 +35,13 @@ html[data-bs-theme="light"] .navbar-toggler-icon {
     display: none;
 }
 
+@media only screen and (max-width: 768px) {
+    .main-contact-us__form {
+        margin: 0 auto !important;
+    }
+}
+
+
 .main-contact-us__form p,
 .main-contact-us__form #name {
     text-align: right;
@@ -150,4 +157,56 @@ html[data-bs-theme="light"] .dark-show {
     to {
         opacity: 1;
     }
+}
+
+/* DWP ITEM */
+
+[data-bs-theme="light"] .dwp-item {
+    background: #F0F1F3;
+}
+
+[data-bs-theme="light"] .dwo-item__image {
+    background: white;
+}
+
+[data-bs-theme="dark"] .dwp-item {
+    background: #292D35;
+}
+
+[data-bs-theme="dark"] .dwo-item__image {
+    background: #16161d;
+}
+
+.has-light {
+    overflow: hidden;
+}
+
+[data-bs-theme="dark"] .dwp-item-light {
+    background: #257CFF !important;
+}
+
+/* FORMS */
+
+.order-tracking-form.main-contact-us__form {
+    max-width: 482px;
+}
+
+.contact-us-page-form.main-contact-us__form {
+    max-width: 838px;
+}
+
+.main-contact-us__form .info {
+    direction: rtl;
+}
+
+/* WARNINGS */
+
+[data-bs-theme="dark"] .warning-info {
+    background: #071933 !important;
+    color: #257CFF !important;
+}
+
+[data-bs-theme="dark"] .warning-danger {
+    background: #300E0B !important;
+    color: #F04438 !important;
 }
