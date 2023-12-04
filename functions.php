@@ -5,3 +5,4 @@ require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/svg_webp_support.php';
 require get_template_directory() . '/inc/navigation_links_class.php';
 require get_template_directory() . '/inc/order_tracking_shortcode.php';
+require get_template_directory() . '/inc/fetch_posts_ajax.php';

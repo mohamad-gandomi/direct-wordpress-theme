@@ -33,3 +33,17 @@ document.addEventListener('click', function (event) {
         openSection(event, event.target.getAttribute('data-section'), widgetIdentifier);
     }
 });
+
+
+$('.modal').on('hide.bs.modal', function () {
+    var video = $(this).find('video')
+    var iframe = $(this).find('iframe')
+
+    if (iframe.length) {
+        iframe.attr('src', iframe.attr('src'));
+    }
+
+    if (video.length) {
+        video[0].pause();
+    }
+})

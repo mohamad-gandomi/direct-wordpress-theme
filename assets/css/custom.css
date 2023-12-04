@@ -93,6 +93,10 @@ html[data-bs-theme="light"] .dark-show {
 
 /* BLOG */
 
+[data-bs-theme=light] .blog__card__image .blog__card__image__comments-no {
+    color: white !important;
+}
+
 .blog .blog__card {
     overflow: hidden;
 }
@@ -123,7 +127,6 @@ html[data-bs-theme="light"] .dark-show {
 /* Style tab content */
 .tabcontent {
     display: none;
-    padding: 20px;
     animation: fadeIn 0.5s ease;
 }
 
@@ -209,4 +212,31 @@ html[data-bs-theme="light"] .dark-show {
 [data-bs-theme="dark"] .warning-danger {
     background: #300E0B !important;
     color: #F04438 !important;
+}
+
+/* SINGLE PAGE POST */
+.single-post .post-content {
+    padding: 5px 18px !important;
+}
+
+.single-post .post-item .image-container {
+    max-width: 112px;
+}
+
+.single-post .blog-archive .post-item .post-content h3 {
+    margin-bottom: 4px !important;
+}
+
+.single-post .blog-archive .post-item .post-content h3 a {
+    font-size: 13px;
+
+}
+
+.single-post .blog-archive .post-item .post-content p {
+    font-size: 11px !important;
+    margin-bottom: 4px !important;
+}
+
+.single-post .blog-archive .post-item .post-content .post-tags .btn {
+    font-size: 13px !important;
 }
