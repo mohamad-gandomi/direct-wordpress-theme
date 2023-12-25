@@ -47,3 +47,34 @@ $('.modal').on('hide.bs.modal', function () {
         video[0].pause();
     }
 })
+
+
+jQuery(document).ready(function ($) {
+
+    $(document).on('change', '.input-text.qty', function () {
+        $('.button[name="update_cart"]').removeAttr('disabled');
+        $('button[name="update_cart"]').click()
+    })
+
+    $(document).on('click', '.input-quantity-product .plus', function () {
+        var quantityInput = $(this).parent().find('input[type="number"]');
+        var currentValue = parseFloat(quantityInput.val());
+
+        if (!isNaN(currentValue)) {
+            quantityInput.val(currentValue + 1);
+            $('.button[name="update_cart"]').removeAttr('disabled');
+            $('button[name="update_cart"]').click()
+        }
+    });
+
+    $(document).on('click', '.input-quantity-product .minus', function () {
+        var quantityInput = $(this).parent().find('input[type="number"]');
+        var currentValue = parseFloat(quantityInput.val());
+
+        if (!isNaN(currentValue)) {
+            quantityInput.val(currentValue - 1);
+            $('.button[name="update_cart"]').removeAttr('disabled');
+            $('button[name="update_cart"]').click()
+        }
+    });
+});
