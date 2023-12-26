@@ -1,5 +1,11 @@
 <!doctype html>
-<html <?php language_attributes(); ?> data-bs-theme="light">
+
+<?php
+// Retrieve the theme mode from the cookie
+$themeMode = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
+?>
+
+<html <?php language_attributes(); ?> data-bs-theme="<?php echo $themeMode; ?>" >
 
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -58,7 +64,7 @@
             <!-- Login/Register & Dark/Light -->
             <div class="d-flex py-7 p-xl-0">
                 <!-- Dark/Light Mode -->
-                <a href="#" id="mode-toggle" class="icon-moon-bulk text-primary fs-1 ms-6 text-decoration-none align-items-center">
+                <a href="#" id="mode-toggle" class="<?php echo 'light' == $themeMode ? 'icon-moon-bulk text-primary' : 'icon-sun-bulk text-secondary' ?> fs-1 ms-6 text-decoration-none align-items-center">
                     <span class="path1"></span>
                     <span class="path2"></span>
                 </a>

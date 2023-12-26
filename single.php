@@ -55,10 +55,36 @@
                                     </span>
                                 </div>
                                 <!-- like and comment -->
+                                <?php
+                                // Get the current post ID
+                                $current_post_id = get_the_ID();
+
+                                // Get the total like count for the current post from logged-in users
+                                $liked_posts_logged_in = array();
+                                if (is_user_logged_in()) {
+                                    $user_id = get_current_user_id();
+                                    $liked_posts_logged_in = get_user_meta($user_id, 'liked_posts', true);
+                                }
+
+                                // Get the total like count for the current post from logged-out users (from the cookie)
+                                $liked_posts_cookie = isset($_COOKIE['liked_posts']) ? json_decode(stripslashes($_COOKIE['liked_posts']), true) : array();
+
+                                // Combine liked posts from both logged-in and logged-out users
+                                $all_liked_posts = array_merge($liked_posts_logged_in, $liked_posts_cookie);
+
+                                // Calculate the total like count
+                                $total_like_count = count(array_unique($all_liked_posts));
+
+                                // Check if the current post is liked by the user (logged in or logged out)
+                                $is_liked_by_user = in_array($current_post_id, $all_liked_posts);
+
+                                // Determine the heart icon color based on like status
+                                $heart_color_class = $is_liked_by_user ? 'text-danger-500' : 'text-black-200';
+                                ?>
                                 <div class="d-inline-block">
                                     <div class="likes d-inline-block ms-6">
-                                        <span>0</span>
-                                        <span class="display-5 text-black-200 icon-heart-bulk lh-lg">
+                                        <span class="like-count"><?php echo $total_like_count; ?></span>
+                                        <span class="display-5 <?php echo $heart_color_class; ?> icon-heart-bulk lh-lg post-like" data-post-id="<?php echo get_the_ID(); ?>" type="button">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                             <span class="path3"></span>
@@ -70,7 +96,7 @@
                                             <span class="path9"></span>
                                         </span>
                                     </div>
-                                    <div class="likes d-inline-block">
+                                    <!-- <div class="likes d-inline-block">
                                         <span>0</span>
                                         <span class="display-5 text-black-200 icon-archive-bulk lh-lg">
                                             <span class="path1"></span>
@@ -83,7 +109,7 @@
                                             <span class="path8"></span>
                                             <span class="path9"></span>
                                         </span>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 

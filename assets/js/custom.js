@@ -77,4 +77,38 @@ jQuery(document).ready(function ($) {
             $('button[name="update_cart"]').click()
         }
     });
+
+
+    $('.post-like').on('click', function () {
+        var post_id = $(this).data('post-id');
+        var ajax_url = ajax_object.ajax_url;
+
+        var $this = $(this);
+
+        $.ajax({
+            type: 'post',
+            url: ajax_url,
+            data: {
+                action: 'handle_post_like',
+                post_id: post_id,
+            },
+            success: function (response) {
+                // Update the UI to reflect the like status
+                if (response.status === 'liked') {
+                    $this.removeClass('text-black-200').addClass('text-danger-500');
+                } else if (response.status === 'unliked') {
+                    $this.removeClass('text-danger-500').addClass('text-black-200');
+                }
+
+                // Update the like count display
+                $this.siblings('.like-count').text(response.like_count);
+
+                console.log('Post liked!');
+            },
+            error: function (xhr, status, error) {
+                console.error(status + ": " + error);
+            }
+        });
+    });
+
 });
