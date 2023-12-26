@@ -83,6 +83,7 @@ jQuery(document).ready(function ($) {
         var post_id = $(this).data('post-id');
         var ajax_url = ajax_object.ajax_url;
 
+
         var $this = $(this);
 
         $.ajax({
@@ -103,7 +104,7 @@ jQuery(document).ready(function ($) {
                 // Update the like count display
                 $this.siblings('.like-count').text(response.like_count);
 
-                console.log('Post liked!');
+                console.log(response.status);
             },
             error: function (xhr, status, error) {
                 console.error(status + ": " + error);
