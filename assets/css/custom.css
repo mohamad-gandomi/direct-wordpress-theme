@@ -88,6 +88,14 @@ html[data-bs-theme="dark"] .login-register {
     .lr-wrapper {
         order: 3;
     }
+
+    .article_blog_tab .blog {
+        order: 2;
+    }
+
+    .article_blog_tab .blog-aside {
+        order: 1;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -892,4 +900,13 @@ html[data-bs-theme="dark"] .blog__card:hover h3 a {
 
 html[data-bs-theme="light"] .wpcf7-form input[type="submit"] {
     color: white !important;
+}
+
+html[data-bs-theme="light"] .Login-light {
+    background-color: #FFBE15 !important;
+}
+
+html,
+body {
+    overflow-x: hidden !important;
 }
