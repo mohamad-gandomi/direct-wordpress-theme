@@ -1,3 +1,5 @@
+AOS.init();
+
 // Function to open a specific section/tab within a widget
 function openSection(evt, sectionName, widgetIdentifier) {
     // Find the specific tab content for this widget instance
@@ -110,6 +112,22 @@ jQuery(document).ready(function ($) {
                 console.error(status + ": " + error);
             }
         });
+    });
+
+    var navbar = $('.navbar');
+    var sticky = navbar.offset().top;
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= sticky) {
+            navbar.addClass('sticky navbar-sticky');
+        } else {
+            navbar.removeClass('sticky navbar-sticky');
+        }
+
+        // Remove navbar-sticky class when scrolling back to the top
+        if ($(window).scrollTop() <= 0) {
+            navbar.removeClass('sticky navbar-sticky');
+        }
     });
 
 });

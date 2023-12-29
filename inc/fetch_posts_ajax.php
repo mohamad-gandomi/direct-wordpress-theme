@@ -72,7 +72,7 @@ function fetch_posts_by_category_id() {
                     <div class="col-12 col-md-8">
 
                         <div class="py-7 px-2 px-xl-6">
-                            <h3 class="display-4 text-gray-50 fw-700 mb-3"><?php echo $post_title; ?></h3>
+                            <h3 class="font-yekanbakh display-5 text-gray-50 fw-700 mb-3"><?php echo $post_title; ?></h3>
                             <p class="fs-4 text-gray-200"><?php echo $post_excerpt; ?></p>
                             <div class="d-flex align-items-center">
                                 <div class="ms-2 ms-xl-8 bta-cart__author">

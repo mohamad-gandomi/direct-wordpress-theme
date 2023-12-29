@@ -21,8 +21,13 @@ $themeMode = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 <!-- NAVBAR
 ================================================== -->
 <header>
-    <nav class="navbar navbar-expand-xl navbar-dark py-6">
+    <nav class="navbar navbar-expand-xl navbar-dark pb-6 pt-5">
         <div class="container">
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <!-- Brand -->
             <a class="navbar-brand mx-0" href="<?php echo site_url(); ?>">
@@ -41,11 +46,6 @@ $themeMode = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
 
             </a>
 
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <!-- Collapse -->
             <?php
                 wp_nav_menu( array(
@@ -60,19 +60,19 @@ $themeMode = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 ));
             ?>
 
-
             <!-- Login/Register & Dark/Light -->
-            <div class="d-flex py-7 p-xl-0">
+            <div class="d-flex p-xl-0 lr-wrapper">
                 <!-- Dark/Light Mode -->
-                <a href="#" id="mode-toggle" class="<?php echo 'light' == $themeMode ? 'icon-moon-bulk text-primary' : 'icon-sun-bulk text-secondary' ?> fs-1 ms-6 text-decoration-none align-items-center">
+                <a href="#!" id="mode-toggle" class="<?php echo 'light' == $themeMode ? 'icon-moon-bulk text-primary' : 'icon-sun-bulk text-secondary' ?> fs-1 ms-2 ms-xl-6 text-decoration-none align-items-center">
                     <span class="path1"></span>
                     <span class="path2"></span>
                 </a>
 
                 <!-- Login/Register BTNs -->
-                <button type="button" class="btn text-light ms-6">ورود</button>
-                <button type="button" class="btn btn-primary px-6 py-3 rounded-3">ثبت نام</button>
+                <a type="button" class="btn text-light ms-6 pt-3 d-none d-xl-block">پیگیری سفارش</a>
+                <a type="button" class="btn px-6 py-3 rounded-3 login-register">ورود | ثبت نام</a>
             </div>
+
 
         </div>
     </nav>
