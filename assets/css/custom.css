@@ -38,25 +38,17 @@ html[data-bs-theme="light"] .navbar-toggler-icon {
 
 /* Change Background */
 .navbar-sticky {
-    background-color: #16161D80;
-    /* Change this to the desired color */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     transition: background-color 0.3s ease;
+    background-color: #ffffff7a;
 }
 
-.navbar-sticky .menu-item a {
-    color: white;
-}
-
-.navbar-sticky a[type="button"] {
-    color: white !important;
-}
-
-.navbar-sticky .navbar-brand .dark-show {
-    display: block !important;
-}
-
-.navbar-sticky .navbar-brand .light-show {
-    display: none;
+html[data-bs-theme="dark"] .navbar-sticky {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: background-color 0.3s ease;
+    background-color: #0000007a;
 }
 
 .login-register {
@@ -101,6 +93,35 @@ html[data-bs-theme="dark"] .login-register {
 @media only screen and (max-width: 768px) {
     .main-contact-us__form {
         margin: 0 auto !important;
+    }
+
+    .direct-tabs__btns {
+        flex-wrap: nowrap !important;
+        text-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .bta-buttons>.col-12 {
+        text-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .main-contact-us__image__text {
+        font-size: 10px;
+        padding: 15px;
+    }
+
+    .main-contact-us__image__text p {
+        line-height: 2;
+    }
+
+    .main-contact-us__image__text--male {
+        right: 0;
+    }
+
+    .main-contact-us__image__text--female {
+        right: 0;
+        bottom: 60px;
     }
 }
 
@@ -909,4 +930,25 @@ html[data-bs-theme="light"] .Login-light {
 html,
 body {
     overflow-x: hidden !important;
+}
+
+.Login-button {
+    padding: 16px 32px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    max-width: 246px;
+}
+
+
+html[data-bs-theme="dark"] .Login-item {
+    background-color: #292D35 !important;
+}
+
+html[data-bs-theme="dark"] .Login-item .icon-info-bulk {
+    color: #C2C6CE !important;
+}
+
+html[data-bs-theme="light"] .Login-light {
+    background-color: #FFBE15 !important;
 }
