@@ -2,7 +2,7 @@
 
 <!-- MAIN
 ================================================== -->
-<div class="container py-6 py-xl-16">
+<div class="container py-6 pb-xl-16 pt-xl-14">
 
     <div class="row gap-3">
 

@@ -952,3 +952,7 @@ html[data-bs-theme="dark"] .Login-item .icon-info-bulk {
 html[data-bs-theme="light"] .Login-light {
     background-color: #FFBE15 !important;
 }
+
+.customer-testimonials-carousel__card img {
+    max-width: 46px !important;
+}
