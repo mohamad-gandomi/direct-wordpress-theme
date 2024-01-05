@@ -9,3 +9,4 @@ require get_template_directory() . '/inc/fetch_posts_ajax.php';
 require get_template_directory() . '/inc/blog_post_sidebar.php';
 require get_template_directory() . '/inc/redirect_to_checkout.php';
 require get_template_directory() . '/inc/post_like_button_ajax.php';
+require get_template_directory() . '/inc/checkout_form.php';

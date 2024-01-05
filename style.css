@@ -30299,10 +30299,6 @@ ul {
     background-color: #fff !important
 }
 
-[data-bs-theme=light] .main-contact-us__image p {
-    color: #000 !important
-}
-
 [data-bs-theme=light] .main-contact-us__form .bg-gray-800 {
     background-color: #E0E2E7 !important;
     background-color: var(--bs-gray-100) !important
