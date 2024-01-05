@@ -1,6 +1,7 @@
 <!-- FOOTER
 ================================================== -->
 <footer>
+    test
     <!-- Top Footer -->
     <div class="top-footer bg-gray-800 py-10">
         <div class="container">
