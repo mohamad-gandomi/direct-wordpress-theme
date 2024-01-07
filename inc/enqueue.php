@@ -9,6 +9,7 @@ function wpdocs_theme_name_scripts() {
 	wp_enqueue_script( 'aos.js', get_template_directory_uri() . '/assets/js/aos.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'custom.js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), '1.0.0', true );
 	wp_localize_script('custom.js', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+	wp_enqueue_script( 'product-viewer.js', get_template_directory_uri() . '/assets/js/product-viewer.js', array('jquery'), '1.0.0', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts');

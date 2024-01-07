@@ -69,8 +69,8 @@ $themeMode = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
                 </a>
 
                 <!-- Login/Register BTNs -->
-                <a type="button" class="btn text-light ms-6 pt-3 d-none d-xl-block">پیگیری سفارش</a>
-                <a type="button" class="btn px-6 py-3 rounded-3 login-register">ورود | ثبت نام</a>
+                <a href="https://direct.ir/elementor/order-tracking/" type="button" class="btn text-light ms-6 pt-3 d-none d-xl-block">پیگیری سفارش</a>
+                <a href="https://direct.ir/elementor/%d9%88%d8%b1%d9%88%d8%af/" type="button" class="btn px-6 py-3 rounded-3 login-register">ورود | ثبت نام</a>
             </div>
 
 
